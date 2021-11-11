@@ -1,7 +1,7 @@
 var carusel = new Vue({
-    el:".container",
+    el:"#app",
     data:{
-        activeslide:0,
+        activeslide: 0,
         slides:[
             {
                 image:'img/01.jpg',
@@ -29,6 +29,22 @@ var carusel = new Vue({
                 text:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
             }
         ],
-        
+    },
+    methods:{
+        nextSl: function(){
+            if(this.activeslide === this.slides.length-1){
+            this.activeslide = 0;
+            }else{
+                this.activeslide ++;
+            }
+        },
+        prevtSl: function(){
+            if(this.activeslide === 0){
+            this.activeslide = this.slides.length-1;
+            }else{
+                this.activeslide --;
+            }
+        },
     }
 });
+

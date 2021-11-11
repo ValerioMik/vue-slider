@@ -14,10 +14,10 @@
     <div id="app" class="container">
         <div class="items">
             <div class="item active">
-                <img :src="slides[activeslide].image" :alt="slides[activeslide].tilte"/>
+                <img :src="slides[activeslide].image" :alt="slides[activeslide].title"/>
                 <div class="text">
                     <h3>
-                        {{slides[activeslide].tilte}}
+                        {{slides[activeslide].title}}
                     </h3>
     
                     <p>
@@ -30,13 +30,13 @@
 
         <div class="thumbs">
             
-            <div class="prev">
+            <div class="prev" @click="prevtSl">
                 <i class="fas fa-arrow-circle-up"></i>
             </div>
-            <div class="next">
+            <div class="next" @click="nextSl">
                 <i class="fas fa-arrow-circle-down"></i>
             </div>
-            <div v-for="slide, i in slides" class="thumb" :class="i === activeslide ? 'active: ''"  :key="i">
+            <div v-for="slide, i in slides" class="thumb" :class="i === activeslide ? 'active' : ''"  :key="i">
                 <img :src="slide.image" :alt="slide.title"/>
             </div>
 
